@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { userRoutes } from "./users/user.routes";
-import { authorize } from "../common/middleware/auth.middleware";
+import { authRoute } from "./auth/auth.routes";
 
 const router = Router();
 
 router.use("/users", userRoutes);
-router.use("/auth", authorize);
+router.use("/auth", authRoute);
 
 export const appRouter = router;

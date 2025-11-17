@@ -1,19 +1,17 @@
-import express from "express";
-import { createServer } from "http";
+import server from "./app.setup";
 import { connectDB } from "./common/db";
-import authRouter from "./modules/auth/auth.routes";
 
-connectDB();
+async function bootstrap() {
+  try {
+    await connectDB().then(() => {
+      server.listen(3000, () => {
+        console.log(`Server running on PORT 3000`);
+      });
+    });
+  } catch (error: any) {
+    console.error(error.message);
+    process.exit(1);
+  }
+}
 
-const app = express();
-const server = createServer(app);
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use("/api/v1", authRouter);
-const PORT = process.env.PORT;
-
-server.listen(PORT, () => {
-  console.log(`Server runing on PORT ${PORT}`);
-});
+bootstrap();

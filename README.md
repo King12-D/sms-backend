@@ -12,4 +12,26 @@ To run:
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.2.23. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Super_Admin
+
+### Post
+
+```
+{
+  "email": "your email"
+  "password": "super_admin password"
+}
+```
+
+### Example super admin_login
+
+```
+const res = await fetch("auth/login", {
+  method: "POST"
+  headers: { "Content-Type: "application/json" },
+  body: JSON.stringify({ email, password })
+});
+
+const data = await res.json();
+localStorage.setItem("token", data.token);
+```

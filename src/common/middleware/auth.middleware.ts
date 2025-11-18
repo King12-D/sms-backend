@@ -36,15 +36,15 @@ export const authorize = async (
 };
 
 //Confirm user role
-export const checkRole = (...checkRole: String[]) => {
+export const checkRole = (...checkRole: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     //Get user role from the request sent
     const userRole = req.user?.role;
 
     if (!checkRole.includes(userRole))
-      return res
-        .status(403)
-        .json({ message: "FORBIDDEN, You don't have access to this page" });
+      return res.status(403).json({
+        message: "FORBIDDEN, You don't have access to this page",
+      });
 
     next();
   };

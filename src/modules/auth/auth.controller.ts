@@ -40,7 +40,7 @@ export const signUp = asyncWrapper(async (req: Request, res: Response) => {
   );
 
   //Return the signUp details
-  return res.status(200).json({
+  return res.status(201).json({
     id: newUser._id,
     token,
     name: newUser.name,

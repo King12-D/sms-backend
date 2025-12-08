@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "sms_portal",
@@ -13,15 +14,15 @@
         "express": "^5.1.0",
         "i": "^0.3.7",
         "jsonwebtoken": "^9.0.2",
-        "mongoose": "^8.19.3",
+        "mongoose": "^8.19.3"
       },
       "devDependencies": {
-        "@types/bun": "latest",
+        "@types/bun": "latest"
       },
       "peerDependencies": {
-        "typescript": "^5",
-      },
-    },
+        "typescript": "^5"
+      }
+    }
   },
   "packages": {
     "@mongodb-js/saslprep": ["@mongodb-js/saslprep@1.3.2", "", { "dependencies": { "sparse-bitfield": "^3.0.3" } }, "sha512-QgA5AySqB27cGTXBFmnpifAi7HxoGUeezwo6p9dI03MuDB6Pp33zgclqVb6oVK3j6I9Vesg0+oojW2XxB59SGg=="],
